@@ -7,15 +7,15 @@
 
 import Foundation
 class Network{
-    func getbeer(comletion:@escaping ([Beer]) -> ()){
+    func getbeer(comletion:@escaping ([Mems]) -> ()){
         let url = URL(string: "https://api.imgflip.com/get_memes")
         URLSession.shared.dataTask(with: url!) {(data,response,error) in
             if error == nil && data != nil{
                 
                 do{
-                    let beers = try JSONDecoder().decode([Beer].self ,from: data!)
+                    let test = try JSONDecoder().decode([Mems].self ,from: data!)
                     DispatchQueue.main.async{
-                        comletion(beers)
+                        comletion(test)
                     }
 //                    print(beers)
                     

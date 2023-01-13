@@ -11,7 +11,7 @@ import SnapKit
 class ViewController: UIViewController {
     
     var network = Network()
-    var mem1:[Beer] = []
+    var mem1:[Mems] = []
     
     
     
@@ -52,8 +52,8 @@ class ViewController: UIViewController {
         //        network.ggetmem { memslist in
         //            self.mem1 = memslis
         mems()
-        network.getbeer { Beerlist in
-                self.mem1 = Beerlist
+        network.getbeer { Memslist in
+                self.mem1 = Memslist
             self.mem2.reloadData()
         }
             
